@@ -117,6 +117,7 @@ THE SOFTWARE.
   <modules>
     <module>hudson-parent</module>
     <module>hudson-test-utils</module>
+    <module>hudson-jelly</module>
     <module>hudson-utils</module>
     <module>hudson-remoting</module>
     <module>hudson-cli</module>
@@ -536,6 +537,12 @@ THE SOFTWARE.
       <dependency>
         <groupId>${project.groupId}</groupId>
         <artifactId>hudson-test-utils</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>hudson-jelly</artifactId>
         <version>${project.version}</version>
       </dependency>
 

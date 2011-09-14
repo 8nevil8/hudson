@@ -1073,28 +1073,30 @@ public class Functions {
     }
 
     /**
+     * TODO check whether this method really needed
      * When called from within JEXL expression evaluation,
      * this method returns the current {@link JellyContext} used
      * to evaluate the script.
      *
      * @since 1.164
      */
-    public static JellyContext getCurrentJellyContext() {
-        JellyContext context = ExpressionFactory2.CURRENT_CONTEXT.get();
-        assert context!=null;
-        return context;
-    }
+//    public static JellyContext getCurrentJellyContext() {
+//        JellyContext context = ExpressionFactory2.CURRENT_CONTEXT.get();
+//        assert context!=null;
+//        return context;
+//    }
 
     /**
+     * TODO check whether this method really needed
      * Evaluate a Jelly script and return output as a String.
      *
      * @since 1.267
      */
-    public static String runScript(Script script) throws JellyTagException {
-        StringWriter out = new StringWriter();
-        script.run(getCurrentJellyContext(), XMLOutput.createXMLOutput(out));
-        return out.toString();
-    }
+//    public static String runScript(Script script) throws JellyTagException {
+//        StringWriter out = new StringWriter();
+//        script.run(getCurrentJellyContext(), XMLOutput.createXMLOutput(out));
+//        return out.toString();
+//    }
 
     /**
      * Returns a sub-list if the given list is bigger than the specified 'maxSize'

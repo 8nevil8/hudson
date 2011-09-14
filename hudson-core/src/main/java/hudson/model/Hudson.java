@@ -52,7 +52,6 @@ import hudson.UDPBroadcastThread;
 import hudson.Util;
 import static hudson.Util.fixEmpty;
 import static hudson.Util.fixNull;
-import hudson.WebAppMain;
 import hudson.XmlFile;
 import hudson.cli.CLICommand;
 import hudson.cli.CliEntryPoint;
@@ -3878,7 +3877,7 @@ public final class Hudson extends Node implements ItemGroup<TopLevelItem>, Stapl
      * Either "" or strings like "/static/VERSION", which avoids Hudson to pick up
      * stale cache when the user upgrades to a different version.
      * <p>
-     * Value computed in {@link WebAppMain}.
+     * Value computed in {@link hudson.WebAppMain}.
      */
     public static String RESOURCE_PATH = "";
     /**
@@ -3886,7 +3885,7 @@ public final class Hudson extends Node implements ItemGroup<TopLevelItem>, Stapl
      * Strings like "/resources/VERSION", which avoids Hudson to pick up
      * stale cache when the user upgrades to a different version.
      * <p>
-     * Value computed in {@link WebAppMain}.
+     * Value computed in {@link hudson.WebAppMain}.
      */
     public static String VIEW_RESOURCE_PATH = "/resources/TBD";
     public static boolean PARALLEL_LOAD = !"false".equals(System.getProperty(Hudson.class.getName() + ".parallelLoad"));
