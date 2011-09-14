@@ -1634,6 +1634,26 @@ public final class Hudson extends Node implements ItemGroup<TopLevelItem>, Stapl
     }
 
     /**
+     * Returns the list of all available cascading templates by project type.
+     *
+     * @return the list of all available cascading templates.
+     */
+    //TODO implement me.+ by type method.
+    public List<AbstractProject> getTemplates(AbstractProject project){
+        return new ArrayList<AbstractProject>();
+    }
+
+    /**
+     * Returns cascading template by name.
+     *
+     * @return cascading template.
+     */
+    //TODO implement me.
+    public AbstractProject getCascadingTemplate(String templateName){
+        return null;
+    }
+
+    /**
      * Updates the slave list.
      *
      * @deprecated

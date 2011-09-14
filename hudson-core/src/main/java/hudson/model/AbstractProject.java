@@ -219,6 +219,22 @@ public abstract class AbstractProject<P extends AbstractProject<P,R>,R extends A
      */
     protected List<Trigger<?>> triggers = new Vector<Trigger<?>>();
 
+    //TODO investigate pros and cons of a BaseTemplate
+    /**
+     * True in case of cascading template.
+     */
+    private boolean cascadingTemplate;
+
+    /**
+     * The name of the cascading template.
+     */
+    private String templateName;
+
+    /**
+     * Selected cascading template for this project.
+     */
+    private transient AbstractProject template;
+
     /**
      * {@link Action}s contributed from subsidiary objects associated with
      * {@link AbstractProject}, such as from triggers, builders, publishers, etc.
@@ -1953,5 +1969,59 @@ public abstract class AbstractProject<P extends AbstractProject<P,R>,R extends A
         if (item==null)
             throw new CmdLineException(null,Messages.AbstractItem_NoSuchJobExists(name,AbstractProject.findNearest(name).getFullName()));
         return item;
+    }
+
+    /**
+     * Returns true if this project is a cascading template.
+     *
+     * @return true if this project is a cascading template.
+     */
+    public boolean isCascadingTemplate() {
+        return cascadingTemplate;
+    }
+
+    /**
+     * Specifies this project as a template.
+     *
+     * @param cascadingTemplate true if the project is a template.
+     */
+    public void setCascadingTemplate(boolean cascadingTemplate) {
+        this.cascadingTemplate = cascadingTemplate;
+    }
+
+    /**
+     * Returns template name.
+     *
+     * @return template name.
+     */
+    public String getTemplateName() {
+        return templateName;
+    }
+
+    /**
+     * Sets template name.
+     *
+     * @param templateName template name.
+     */
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
+    }
+
+    /**
+     * Returns selected cascading template.
+     *
+     * @return cascading template.
+     */
+    public AbstractProject getTemplate() {
+        return template;
+    }
+
+    /**
+     * Sets cascading template.
+     *
+     * @param template cascading template.
+     */
+    public void setTemplate(AbstractProject template) {
+        this.template = template;
     }
 }
